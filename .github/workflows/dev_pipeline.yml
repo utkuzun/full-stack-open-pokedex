@@ -62,11 +62,3 @@ jobs:
           severity: warn
           details: Release Cancelled!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - run: echo ${{ toJson(jobs.release.outputs) }}
-
-      # - name: read context
-      #   env:
-      #     GITHUB_CONTEXT: ${{ toJson(github) }}
-      #     COMMITS: ${{ toJson(github.event.commits) }}
-      #     COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-      #   run: echo "$COMMIT_MESSAGES" ; echo "$COMMIT" ;  echo "$GITHUB_CONTEXT" ;
