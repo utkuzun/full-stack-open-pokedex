@@ -14,7 +14,7 @@ jobs:
         if: ${{ contains(join(github.event.commits.*.message, ' '), 'health check') }}
         with:
           # Check the following URLs one by one sequentially
-          url: https://uu-todolist.netlify.appdasda/
+          url: https://uu-todolist.netlify.app/
           # Follow redirects, or just report success on 3xx status codes
           follow-redirect: false # Optional, defaults to "false"
           # Fail this action after this many failed attempts
