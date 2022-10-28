@@ -1,6 +1,7 @@
 name: HealthCheck of the App
 
 on:
+  # - cron:  '*/5 * * * *'
   push:
     branches:
       - master
