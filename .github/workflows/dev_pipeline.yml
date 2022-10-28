@@ -62,7 +62,7 @@ jobs:
           severity: warn
           details: Release Cancelled!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - run: echo ${{ needs.tag_release.release.outputs }}
+      - run: echo ${{ toJson(jobs.release.outputs) }}
 
       # - name: read context
       #   env:
