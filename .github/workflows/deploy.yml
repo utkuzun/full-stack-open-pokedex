@@ -35,4 +35,7 @@ jobs:
         with:
           severity: error
           details: Deploy Failed!
+          text: Deploy failed
+          footer: Severity error
+          description: ${{ github.event.head_commit }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}

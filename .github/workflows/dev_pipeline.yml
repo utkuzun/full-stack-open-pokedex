@@ -47,6 +47,9 @@ jobs:
         with:
           severity: info
           details: Release Succeeded!
+          text: New release
+          footer: Severity informal
+          description: ${{ github.event.head_commit }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Release Failure
         uses: rjstone/discord-webhook-notify@v1
@@ -62,3 +65,10 @@ jobs:
           severity: warn
           details: Release Cancelled!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
+      # - name: read context
+      #   env:
+      #     GITHUB_CONTEXT: ${{ toJson(github) }}
+      #     COMMITS: ${{ toJson(github.event.commits) }}
+      #     COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+      #   run: echo "$COMMIT_MESSAGES" ; echo "$COMMIT" ;  echo "$GITHUB_CONTEXT" ;
