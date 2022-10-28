@@ -29,3 +29,10 @@ jobs:
           healthcheck: 'https://fs-open-cdci.herokuapp.com/health'
           checkstring: 'ok'
           rollbackonhealthcheckfailed: true
+      - name: Release Failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ failure() }}
+        with:
+          severity: error
+          details: Deploy Failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
