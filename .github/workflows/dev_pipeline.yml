@@ -49,7 +49,7 @@ jobs:
           details: Release Succeeded!
           text: New release
           footer: Severity informal
-          description: ${{ github.event.head_commit }}
+          description: 'Commit:  ${{ github.event.commits[0].id }}'
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Release Failure
         uses: rjstone/discord-webhook-notify@v1
