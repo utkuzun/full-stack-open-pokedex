@@ -25,6 +25,8 @@ jobs:
         run: npm test
       - name: e2e tests
         uses: cypress-io/github-action@v4
+        env:
+          NODE_OPTIONS: '--openssl-legacy-provider'
         with:
           build: npm run build
           start: npm run start-prod
