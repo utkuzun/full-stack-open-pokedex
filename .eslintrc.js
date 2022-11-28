@@ -18,6 +18,11 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', 'jest', 'cypress'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     indent: ['error', 2],
     // 'linebreak-style': ['error', 'unix'],
